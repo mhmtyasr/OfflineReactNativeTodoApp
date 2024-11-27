@@ -9,9 +9,6 @@
 // Includes from @react-native-community/netinfo
 #include <winrt/ReactNativeNetInfo.h>
 
-// Includes from react-native-get-random-values-windows
-#include <winrt/RNGetRandomValues.h>
-
 // Includes from react-native-screens
 #include <winrt/RNScreens.h>
 
@@ -27,8 +24,6 @@ void RegisterAutolinkedNativeModulePackages(winrt::Windows::Foundation::Collecti
     packageProviders.Append(winrt::ReactNativeAsyncStorage::ReactPackageProvider());
     // IReactPackageProviders from @react-native-community/netinfo
     packageProviders.Append(winrt::ReactNativeNetInfo::ReactPackageProvider());
-    // IReactPackageProviders from react-native-get-random-values-windows
-    packageProviders.Append(winrt::RNGetRandomValues::ReactPackageProvider());
     // IReactPackageProviders from react-native-screens
     packageProviders.Append(winrt::RNScreens::ReactPackageProvider());
     // IReactPackageProviders from react-native-sqlite-storage

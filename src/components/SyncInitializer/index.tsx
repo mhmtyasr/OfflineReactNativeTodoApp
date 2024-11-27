@@ -89,7 +89,6 @@ export const SyncProvider: React.FC<SyncProviderProps> = ({children}) => {
         await BulkDataService.hasChangedDataInDb(lastSyncTime!).then(
           async hasChangedData => {
             handleSetBulkDataSending(false);
-            console.log('hasChangedData', hasChangedData);
             if (hasChangedData) {
               toast.show.info('Değişen datalar gönderiliyor');
                syncCheckerInterval.stop();

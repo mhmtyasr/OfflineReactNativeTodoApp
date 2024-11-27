@@ -1,5 +1,12 @@
 import {useEffect, useRef} from 'react';
-import {Animated, StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
+import {
+  Animated,
+  StyleProp,
+  StyleSheet,
+  View,
+  ViewStyle,
+  Modal,
+} from 'react-native';
 import React from 'react';
 import {Popup} from 'react-native-windows';
 
@@ -10,7 +17,6 @@ interface ModalContainerProps {
 }
 
 const ModalContainer = ({visible, children}: ModalContainerProps) => {
-
   const opacity = useRef(new Animated.Value(0)).current; // Opacity state
 
   useEffect(() => {
@@ -32,11 +38,15 @@ const ModalContainer = ({visible, children}: ModalContainerProps) => {
   }, [visible, opacity]);
 
   return (
-    <Popup isOpen={visible}>
+    <Modal
+      animationType="slide"
+      transparent={true}
+      visible={visible}
+      onRequestClose={() => {}}>
       <Animated.View style={[styles.container, {opacity}]}>
         <View style={styles.modalContent}>{children}</View>
       </Animated.View>
-    </Popup>
+    </Modal>
   );
 };
 

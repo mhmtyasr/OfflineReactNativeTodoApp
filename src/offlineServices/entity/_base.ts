@@ -1,19 +1,23 @@
+import { generateUUID } from '@/utils/uuidUtils';
 import {AutoMap} from '@automapper/classes';
 import {
   Column,
   CreateDateColumn,
   DeleteDateColumn,
-  PrimaryGeneratedColumn,
+  PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
 export class EntityBase {
+  constructor() {
+    this.clientId = generateUUID();
+  }
   @AutoMap()
   @Column({type: 'integer', nullable: true})
   id: number | null;
 
   @AutoMap()
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryColumn()
   clientId: string;
 
   @AutoMap()

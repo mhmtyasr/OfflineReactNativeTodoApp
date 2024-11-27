@@ -86,9 +86,6 @@ const CreateOrUpdateTodo: React.FC<TodoFormProps> = ({
         innerRef={formikRef}
         onSubmit={onHandleSubmit}>
         {({handleChange, handleBlur, values, errors, touched}) => {
-          console.log('values', values);
-          console.log('errors', errors);
-          console.log('touched', touched);
           return (
             <View style={styles.container}>
               <Input

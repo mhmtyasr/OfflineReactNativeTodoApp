@@ -89,7 +89,7 @@ export const InitializerProvider: React.FC<InitializerProviderProps> = ({
         handleSetLastSyncTime,
         setIsConnected,
       }}>
-      <View >
+      <View>
         <Button
           onPress={() => {
             setIsConnected(!isConnected);
